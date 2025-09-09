@@ -3,7 +3,7 @@ import os
 import json
 
 # Get API keys from environment variables (production) or local config (development)
-ACRCLOUD_HOST = os.getenv('ACRCLOUD_HOST')
+ACRCLOUD_HOST = os.getenv('ACR_HOST')  # Using ACR_HOST for Vercel compatibility
 ACRCLOUD_ACCESS_KEY = os.getenv('ACRCLOUD_ACCESS_KEY')
 ACRCLOUD_ACCESS_SECRET = os.getenv('ACRCLOUD_ACCESS_SECRET')
 
