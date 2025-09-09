@@ -7,12 +7,12 @@ ACRCLOUD_HOST = os.getenv('ACRCLOUD_HOST')
 ACRCLOUD_ACCESS_KEY = os.getenv('ACRCLOUD_ACCESS_KEY')
 ACRCLOUD_ACCESS_SECRET = os.getenv('ACRCLOUD_ACCESS_SECRET')
 
-# Fallback to local keys if environment variables are not set (local development)
+# Fallback to local keys if environment variables are not set (local development only)
 if not ACRCLOUD_HOST:
     try:
         from config.keys import ACRCLOUD_HOST, ACRCLOUD_ACCESS_KEY, ACRCLOUD_ACCESS_SECRET
     except ImportError:
-        raise ValueError("ACRCloud API keys not found. Please set environment variables or create config/keys.py")
+        pass  # This will always fail in production, which is expected
 
 def recognise_song(file_path):
     try:
