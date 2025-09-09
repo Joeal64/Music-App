@@ -2,8 +2,8 @@ import requests
 import os
 
 # Get API keys from environment variables (production) or local config (development)
-LASTFM_CLIENT_ID = os.getenv('LASTFM_CLIENT_ID')
-LASTFM_CLIENT_SECRET = os.getenv('LASTFM_CLIENT_SECRET')
+LASTFM_CLIENT_ID = os.getenv('LASTFM_ID')  # Using LASTFM_ID for Vercel compatibility
+LASTFM_CLIENT_SECRET = os.getenv('LASTFM_SECRET')  # Using LASTFM_SECRET for Vercel compatibility
 
 # Fallback to local keys if environment variables are not set (local development only)
 if not LASTFM_CLIENT_ID:

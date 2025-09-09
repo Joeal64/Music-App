@@ -4,8 +4,8 @@ import json
 
 # Get API keys from environment variables (production) or local config (development)
 ACRCLOUD_HOST = os.getenv('ACR_HOST')  # Using ACR_HOST for Vercel compatibility
-ACRCLOUD_ACCESS_KEY = os.getenv('ACRCLOUD_ACCESS_KEY')
-ACRCLOUD_ACCESS_SECRET = os.getenv('ACRCLOUD_ACCESS_SECRET')
+ACRCLOUD_ACCESS_KEY = os.getenv('ACR_ACCESS_KEY')  # Using ACR_ACCESS_KEY for Vercel compatibility
+ACRCLOUD_ACCESS_SECRET = os.getenv('ACR_ACCESS_SECRET')  # Using ACR_ACCESS_SECRET for Vercel compatibility
 
 # Fallback to local keys if environment variables are not set (local development only)
 if not ACRCLOUD_HOST:
