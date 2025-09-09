@@ -1,6 +1,14 @@
 from acrcloud.recognizer import ACRCloudRecognizer
-from config.keys import ACRCLOUD_HOST, ACRCLOUD_ACCESS_KEY, ACRCLOUD_ACCESS_SECRET
+import os
 import json
+
+# Try to import keys for local development, fall back to environment variables
+try:
+    from config.keys import ACRCLOUD_HOST, ACRCLOUD_ACCESS_KEY, ACRCLOUD_ACCESS_SECRET
+except ImportError:
+    ACRCLOUD_HOST = os.getenv('ACRCLOUD_HOST')
+    ACRCLOUD_ACCESS_KEY = os.getenv('ACRCLOUD_ACCESS_KEY') 
+    ACRCLOUD_ACCESS_SECRET = os.getenv('ACRCLOUD_ACCESS_SECRET')
 
 def recognise_song(file_path):
     try:

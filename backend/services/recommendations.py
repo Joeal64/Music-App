@@ -1,5 +1,12 @@
 import requests
-from config.keys import LASTFM_CLIENT_ID, LASTFM_CLIENT_SECRET
+import os
+
+# Try to import keys for local development, fall back to environment variables
+try:
+    from config.keys import LASTFM_CLIENT_ID, LASTFM_CLIENT_SECRET
+except ImportError:
+    LASTFM_CLIENT_ID = os.getenv('LASTFM_CLIENT_ID')
+    LASTFM_CLIENT_SECRET = os.getenv('LASTFM_CLIENT_SECRET')
 
 def recommend_songs(song_title):
     # Last.fm API base URL
