@@ -47,13 +47,19 @@ pip install -r requirements.txt
 ```
 
 4. Configure API keys in `config/keys.py`:
+
+**Get your API keys:**
+- **ACRCloud**: Sign up at [ACRCloud Console](https://console.acrcloud.com/) for music recognition
+- **Last.fm**: Get API key at [Last.fm API](https://www.last.fm/api) for recommendations
+
+**Update `config/keys.py` with your keys:**
 ```python
-# ACRCloud Configuration
-ACRCLOUD_HOST = 'your_acrcloud_host'
+# ACRCloud Configuration (get from ACRCloud Console)
+ACR_HOST = 'identify-your-region.acrcloud.com'  # e.g., identify-eu-west-1.acrcloud.com
 ACRCLOUD_ACCESS_KEY = 'your_access_key'
 ACRCLOUD_ACCESS_SECRET = 'your_access_secret'
 
-# Last.fm Configuration  
+# Last.fm Configuration (get from Last.fm API)
 LASTFM_CLIENT_ID = 'your_lastfm_api_key'
 LASTFM_CLIENT_SECRET = 'your_lastfm_secret'
 ```
@@ -84,36 +90,30 @@ npm run dev
 
 The app will be available at `http://localhost:3000`
 
+## Quick Start
+
+Use the included batch file to start both servers:
+```bash
+# Windows
+start-app.bat
+
+# Or manually start both servers:
+# Terminal 1: Backend
+cd backend
+music-app-env\Scripts\activate
+python main.py
+
+# Terminal 2: Frontend  
+cd frontend
+npm run dev
+```
+
 ## API Endpoints
 
 - `POST /recognize` - Recognize song from uploaded audio file
 - `POST /recognize-youtube` - Recognize song from YouTube URL
 - `POST /recommend` - Get song recommendations
-- `GET /health` - Health check endpoint
-
-## Deployment
-
-### Backend Deployment
-1. Install dependencies from `requirements.txt`
-2. Set up environment variables for API keys
-3. Run with: `uvicorn main:app --host 0.0.0.0 --port 8000`
-
-### Frontend Deployment
-1. Build the production app: `npm run build`
-2. Start production server: `npm start`
-3. Or deploy to platforms like Vercel, Netlify, etc.
-
-## Environment Variables
-
-Create a `.env` file in the backend directory:
-
-```env
-ACR_HOST=your_host
-ACR_ACCESS_KEY=your_key
-ACR_ACCESS_SECRET=your_secret
-LASTFM_ID=your_lastfm_key
-LASTFM_SECRET=your_lastfm_secret
-```
+- `GET /` - Health check endpoint
 
 ## License
 

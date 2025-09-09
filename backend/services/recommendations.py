@@ -1,16 +1,7 @@
 import requests
-import os
 
-# Get API keys from environment variables (production) or local config (development)
-LASTFM_CLIENT_ID = os.getenv('LASTFM_ID')  # Using LASTFM_ID for Vercel compatibility
-LASTFM_CLIENT_SECRET = os.getenv('LASTFM_SECRET')  # Using LASTFM_SECRET for Vercel compatibility
-
-# Fallback to local keys if environment variables are not set (local development only)
-if not LASTFM_CLIENT_ID:
-    try:
-        from config.keys import LASTFM_CLIENT_ID, LASTFM_CLIENT_SECRET
-    except ImportError:
-        pass  # This will always fail in production, which is expected
+# Import API keys from local configuration
+from config.keys import LASTFM_CLIENT_ID, LASTFM_CLIENT_SECRET
 
 def recommend_songs(song_title):
     # Last.fm API base URL
