@@ -111,11 +111,11 @@ The app will be available at `http://localhost:3000`
 Create a `.env` file in the backend directory:
 
 ```env
-ACRCLOUD_HOST=your_host
-ACRCLOUD_ACCESS_KEY=your_key
-ACRCLOUD_ACCESS_SECRET=your_secret
-LASTFM_CLIENT_ID=your_lastfm_key
-LASTFM_CLIENT_SECRET=your_lastfm_secret
+ACR_HOST=your_host
+ACR_ACCESS_KEY=your_key
+ACR_ACCESS_SECRET=your_secret
+LASTFM_ID=your_lastfm_key
+LASTFM_SECRET=your_lastfm_secret
 ```
 
 ## License
