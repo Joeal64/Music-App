@@ -2,6 +2,9 @@
 
 A modern web application that recognizes songs from audio files or YouTube links and provides music recommendations.
 
+## 🚀 Live Demo
+Deployed on Vercel with automatic deployments from GitHub.
+
 ## Features
 
 - 🎵 **Audio Recognition**: Upload audio files (MP3, WAV, M4A) to identify songs
